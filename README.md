@@ -1,4 +1,4 @@
-# Covid Map Hanoi with Artificial Intelligence
+# Covid Map Hanoi using Machine Learning
 My on-going project, implementing Recurrent Neural Network for Named Entity Recognition task on Covid newspaper.
 
 The project use BERT-multilingual, trained specifically on ~ 200 covid newspaper with tags following BILOU tags format (CoNLL-U 2003)
