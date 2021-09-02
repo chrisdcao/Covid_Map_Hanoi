@@ -10,7 +10,3 @@ After extraction, an automated Python script will run to add the new information
 Here's a demo of the map on web:
 
 ![Covid Map Hanoi](demo/covid_map.gif)
-
-The model is stopping at accuracy of 89.61% evaluation loss at 4 training epochs. Any more epochs are signalling overfitting thus further conductions must wait for more data.
-
-The model has not implemented Conditional Random Field, which might slightly increase the accuracy.
