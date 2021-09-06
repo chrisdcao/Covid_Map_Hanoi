@@ -4,7 +4,7 @@ Here's a demo of the map on web:
 
 ![Covid Map Hanoi](demo/covid_map.gif)
 
-My on-going project, implementing Recurrent Neural Network for Named Entity Recognition task on Covid newspaper.
+A Corona virus map for Hanoi, implementing Recurrent Neural Network for Named Entity Recognition task on Covid newspaper.
 
 The project use BERT-multilingual, trained specifically on ~ 200 covid newspaper with tags following BILOU tags format (CoNLL-U 2003)
 
