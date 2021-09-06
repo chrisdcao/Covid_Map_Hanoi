@@ -1,4 +1,4 @@
-# Covid Map Hanoi using Machine Learning
+# Covid Map Hanoi 📍
 
 Here's a demo of the map on web:
 
