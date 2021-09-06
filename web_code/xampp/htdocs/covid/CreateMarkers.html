@@ -1,0 +1,157 @@
+<!DOCTYPE html >
+  <head>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Create Markers</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 45px;
+        left: 40%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="floating-panel">
+      <input id="search" type="textbox" value="">
+      <input id="submit" type="button" value="Search">
+    </div>
+
+    <div id="map" height="460px" width="100%"></div>
+    <div id="form">
+      <table>
+      <tr><td>Name:</td><td><input type='text' id='name'/></td> </tr>
+      <tr><td>Address:</td><td><input type='text' id='address'/></td></tr>
+      <tr><td>Subject:</td><td><input type='text' id='subject'/></td></tr>
+      <tr><td>Type:</td> <td><select id='type'> +
+                 <option value='Subject1' SELECTED>Subject1</option>
+                 <option value='Reference'>Reference</option>
+                 </select> </td></tr>
+                 <tr><td></td><td><input type='button' value='Save' onclick='saveData()'/></td></tr>
+      </table>
+    </div>
+    <div id="message">Location saved</div>
+    <script
+  	src="https://code.jquery.com/jquery-3.6.0.js"
+  	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  	crossorigin="anonymous">
+  </script>
+    
+    <script>
+      var map;
+      var marker;
+      var infowindow;
+      var messagewindow;
+
+      function initMap() {
+        var california = {lat: 64.9991, lng: 25.4756};
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: california,
+          zoom: 14
+        });
+	var geocoder = new google.maps.Geocoder();
+
+	document.getElementById('submit').addEventListener('click', function() {
+        geocodeAddress(geocoder, map);
+        });
+
+
+        infowindow = new google.maps.InfoWindow({
+          content: document.getElementById('form')
+        })
+
+        messagewindow = new google.maps.InfoWindow({
+          content: document.getElementById('message')
+        });
+
+        google.maps.event.addListener(map, 'click', function(event) {
+          marker = new google.maps.Marker({
+            position: event.latLng,
+            map: map
+          });
+
+
+          google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, marker);
+          });
+        });
+      }
+
+      function saveData() {
+        var name = escape(document.getElementById('name').value);
+        var address = escape(document.getElementById('address').value);
+        var subject = escape(document.getElementById('subject').value);
+        var type = document.getElementById('type').value;
+        var latlng = marker.getPosition();
+        var url = 'markers.php?name=' + name + '&address=' + address + '&subject=' + subject + '&type=' + type + '&lat=' + latlng.lat() + '&lng=' + latlng.lng();
+
+        downloadUrl(url, function(data, responseCode) {
+
+          if (responseCode == 200 && data.length <= 1) {
+            infowindow.close();
+            messagewindow.open(map, marker);
+          }
+        });
+      }
+
+		function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('search').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+
+      function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+            new ActiveXObject('Microsoft.XMLHTTP') :
+            new XMLHttpRequest;
+
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            request.onreadystatechange = doNothing;
+            callback(request.responseText, request.status);
+          }
+        };
+
+        request.open('GET', url, true);
+        request.send(null);
+      }
+
+      function doNothing () {
+      }
+
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOqmxPHrBW3ZzFM-76gnKK29-bA7oSqfQ&callback=initMap">
+    </script>
+  </body>
+</html>

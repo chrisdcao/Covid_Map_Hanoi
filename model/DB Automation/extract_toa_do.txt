@@ -1,0 +1,30 @@
+BN3779		Quỳnh Lôi, Hai Bà Trưng		20.9997566		105.8514355		nơi ở
+BN3779		TTYT Hai Bà Trưng		21.0163656		105.8511249
+BN3779		Trường cao đẳng nghề Công nghệ cao, Nam Từ Liêm		21.0208362		105.747959
+BN3779		CDC Hà Nội		21.0090329		105.8459763
+BN3781		thôn 5, Đông Mỹ, Thanh Trì		20.9154668		105.8702952
+BN3781		Thôn 3, Vạn Phúc, Thanh Trì		20.9202433		105.8709954
+BN3781		Ngọc Hồi		14.739667		107.3690603
+BN3781		TTYT Thường Tín 	20.8061424		105.8845024		nơi ở
+BN3781		CDC Hà Nội		21.0090329		105.8459763
+BN3783		bến xe Yên Nghĩa		20.949813		105.7452133
+BN3783		TTYT huyện Thường Tín 		20.8061424		105.8845024		nơi ở
+BN3783		CDC Hà Nội		21.0090329		105.8459763
+BN3785		TTYT huyện Thường Tín 		20.8061424		105.8845024		nơi ở
+BN3785		CDC Hà Nội		21.0090329		105.8459763
+BN3786		CDC Hà Nội		21.0090329		105.8459763
+BN3786		Quang Hiền – Hiền Giang – Thường Tín		20.8712481		105.8178128		nơi ở
+BN3787		Bệnh viện Bệnh Nhiệt đới Trung ương			21.0656383		105.7375756
+BN3787		Kim Chung		21.1336921		105.7576323
+BN3787		thôn Đoài, Kim Nỗ, Đông Anh, Hà Nội		21.1364937		105.7809384		nơi ở
+BN3787		Tứ Hiệp, Thanh Trì		20.9466942		105.8376493
+BN3787		bệnh viện Thanh Nhàn		21.0035609		105.8571863
+BN3787		CDC Hà Nội		21.0090329		105.8459763
+BN3797		Bệnh viện Phổi Trung ương		21.0424428		105.8115322
+BN3797		Đường Nguyễn Xiển, Phường Hạ Đình, Thanh Xuân, Hà Nội		20.987485		105.8043614		nơi ở
+BN3797		CDC Hà Nội		21.0090329		105.8459763
+BN3836		Đường Nguyễn Xiển, Phường Hạ Đình, Thanh Xuân		20.987485		105.8043614		nơi ở
+BN3836		Trung tâm Giáo dục Quốc phòng – An Ninh, Đại học Quốc gia Hà Nội		21.0376763		105.7794414
+BN3836		CDC Hà Nội		21.0090329		105.8459763
+BN3852		phường Trần Phú, Hoàng Mai		20.9685313		105.8664892		nơi ở
+BN3852		Bệnh viện Phổi Trung ương		21.0424428		105.8115322
